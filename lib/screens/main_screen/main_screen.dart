@@ -1,8 +1,10 @@
 import 'package:advance_flutter_ch1/uitels/app_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../uitels/Globle_variable_list.dart';
+import '../1_4/change_theme/provider/provider.dart';
 
 
 class MainScreen extends StatelessWidget {
@@ -35,7 +37,7 @@ class MainScreen extends StatelessWidget {
               height: 140,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: (isdark)?Colors.white:Colors.black12,
+                color: (Provider.of<ThemeProvider>(context, listen: true).isDark)?Colors.white:Colors.black12,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(appList[index].title,textAlign: TextAlign.center,),

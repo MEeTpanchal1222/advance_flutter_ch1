@@ -18,6 +18,12 @@ class GlobalTheme {
           onTertiaryContainer: Color(0xffF09F8B)),
       primaryColor: Colors.grey,
       textTheme: const TextTheme(
+        bodyMedium: TextStyle(
+          fontSize: 25,
+        ),
+        bodyLarge: TextStyle(
+          fontSize: 40,fontWeight: FontWeight.w500
+        ),
           titleLarge: TextStyle(
               fontWeight: FontWeight.bold, color: CupertinoColors.black),
           titleMedium: TextStyle(
