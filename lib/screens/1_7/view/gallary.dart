@@ -91,7 +91,7 @@ class GalleryScreen extends StatelessWidget {
                     if (value == "Hidden images") {
                       await Provider.of<GalleryProvider>(context, listen: false)
                           .authentication();
-                      if (Provider.of<GalleryProvider>(context, listen: true)
+                      if (Provider.of<GalleryProvider>(context, listen: false)
                           .isVerified) {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => HiddenScreen(),));
                       }
