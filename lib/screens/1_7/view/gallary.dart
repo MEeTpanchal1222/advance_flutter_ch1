@@ -138,25 +138,72 @@ class GalleryScreen extends StatelessWidget {
                 children: [
                   Container(
                     height: 110,
-                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    width: 170,
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(
-                              galleryData[index].image!,
-                            ))),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: CupertinoContextMenu(
+                      actions: [
+                        CupertinoContextMenuAction(
+                          child: const Text("Copy"),
+                          onPressed: () => Navigator.pop(context),
+                          isDefaultAction: true,
+                          trailingIcon: CupertinoIcons.doc_on_clipboard_fill,
+                        ),
+                        CupertinoContextMenuAction(
+                          child: const Text("Share"),
+                          onPressed: () => Navigator.pop(context),
+                          isDefaultAction: true,
+                          trailingIcon: CupertinoIcons.share,
+                        ),
+                        CupertinoContextMenuAction(
+                          child: const Text("Favourite"),
+                          onPressed: () => Navigator.pop(context),
+                          isDefaultAction: true,
+                          trailingIcon: CupertinoIcons.heart,
+                        ),
+                        CupertinoContextMenuAction(
+                          child: const Text("Show in all Photos"),
+                          onPressed: () => Navigator.pop(context),
+                          isDefaultAction: true,
+                          trailingIcon: CupertinoIcons.device_phone_landscape,
+                        ),
+                        CupertinoContextMenuAction(
+                          child: const Text(
+                            "Remove",
+                            style: TextStyle(
+                                color: CupertinoColors.destructiveRed),
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                          isDefaultAction: true,
+                          trailingIcon: CupertinoIcons.delete_simple,
+                        ),
+                      ],
+                      child: Container(
+                        height: 500,
+                        width: 500,
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                  galleryData[index].image!,
+                                ))),
+                      ),
+                    ),
                   ),
                   Text(
                     galleryData[index].name!,
                     style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             fontWeight: FontWeight.w600, fontSize: 15)),
                   ),
                   Text(
                     galleryData[index].quantity.toString(),
                     style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 12,
                             color: Colors.grey)),
