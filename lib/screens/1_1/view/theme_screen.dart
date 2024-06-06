@@ -13,11 +13,10 @@ class ThemeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 150),
+        padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 200),
         child: Container(
           height: 500,
           width: 350,
-          alignment: Alignment.center,
           child: Card(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
